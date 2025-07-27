@@ -64,14 +64,15 @@ st.sidebar.title("📋 侧边栏导航")
 
 # 侧边栏一级分类
 main_options = ["基础功能", "数据校验"]
-main_choice = st.sidebar.selectbox("选择主功能", main_options)
+main_choice = st.sidebar.selectbox("选择主功能", main_options, index=1)
+# index用于设定默认选项
 
 # 侧边栏二级分类
 sub_pages = {
     "基础功能": list(PAGES.keys()),
     "数据校验": ["Pandas"]
 }
-sub_choice = st.sidebar.selectbox("选择子功能", sub_pages[main_choice])
+sub_choice = st.sidebar.selectbox("选择子功能", sub_pages[main_choice], index=0)
 
 # 根据选择加载对应页面
 if sub_choice in PAGES:

@@ -1,0 +1,46 @@
+.fixed-header {
+    position: fixed; 
+    /* 设置元素的定位方式为固定定位 */
+    /* static(默认)、relative(相对定位)、absolute(绝对定位)、sticky(粘性定位) */
+    top: 35px; 
+    /* 设置元素距离浏览器窗口顶部的距离，当前表示紧贴顶部 */
+    /* top: 20px(距顶部20像素)、top: 50%(距顶部50%) */
+    left: 0; 
+    /* 设置浏览器距离浏览器窗口左边的距离，当前表示紧贴左边 */
+    /* left: 100px、right: 0(靠右对齐) */
+    width: 100%;
+    /* 设置元素宽度为父容器的100%，即页眉占满整个浏览器窗口宽度 */
+    /* width: 300px(固定宽度)、width: 50%(半宽) */
+    background-color: #0e1117;
+    /* 设置背景颜色 # + 0e(红) + 11(绿) + 17(蓝) */
+    /* width: 300px(固定宽度)、width: 50%(半宽) */
+    color: white;
+    /* 设置文字颜色为白色 */
+    /* color: #ff4b4b(红色)、color: rgb(255, 0, 0) */
+    padding: 0px 20px;
+    /* 设置内边距，即元素内容与边框之间的空间，0px为上下内边距，20px为左右内边距 */
+    /* padding: 上 右 下 左 或 padding: 上下 左右 */
+    z-index: 999;
+    /* 设置元素的层级顺序(堆叠顺序)，999 表示很高的层级，确保元素显示在其他元素之上 */
+    /* z-index: 1(默认)、z-index: 1000(更高层级)，数值越大，元素越靠前显示 */
+    border-bottom: 2px solid #ff4b4b;
+    /* 设置底部边框为2像素实线，颜色为红色 */
+    /* dashed(虚线)、dotted(点线)、double(双线) */
+    box-shadow: 0 0px 4px rgba(0,0,0,0.1);
+    /* 给元素添加阴影效果，参数分别为水平偏移量、垂直偏移量、模糊半径、(阴影颜色、透明度10%) */
+    text-align: center;
+    /* 设置文本对齐方式为居中 */
+}
+
+.fixed-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #0e1117;
+    color: white;
+    padding: 5px 20px;
+    z-index: 999;
+    border-top: 2px solid #ff4b4b;
+    text-align: center;
+}

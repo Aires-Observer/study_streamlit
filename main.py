@@ -1,16 +1,15 @@
 import streamlit as st
 from sidebar import *
 import os
-from gx_validator.main import gx_validator_func
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
 # 设置页面配置
 st.set_page_config(
-    page_title = "Streamlit 学习示例标签页",
-    page_icon = "🚀", # 标签页的图标
+    page_title = "Streamlit 学习平台",
+    page_icon = "📚", # 标签页的图标
     layout = "wide",
-    initial_sidebar_state = "expanded"
+    initial_sidebar_state = "auto"
 )
 
 # layout: 控制页面布局宽度
@@ -62,23 +61,13 @@ PAGES = {
 
 st.sidebar.title("📋 侧边栏导航")
 
-# 侧边栏一级分类
-main_options = ["基础功能", "数据校验"]
-main_choice = st.sidebar.selectbox("选择主功能", main_options, index=1)
+# 侧边栏分类
+options = PAGES.keys()
+choice = st.sidebar.radio("选择主功能", options, index=1)
 # index用于设定默认选项
 
-# 侧边栏二级分类
-sub_pages = {
-    "基础功能": list(PAGES.keys()),
-    "数据校验": ["Pandas"]
-}
-sub_choice = st.sidebar.selectbox("选择子功能", sub_pages[main_choice], index=0)
-
-# 根据选择加载对应页面
-if sub_choice in PAGES:
-    PAGES[sub_choice]()  # 根据选择切换主内容
-elif sub_choice == "Pandas":
-    gx_validator_func()
+if choice in PAGES:
+    PAGES[choice]()  # 根据选择切换内容
 
 # 侧边栏页脚
 st.sidebar.markdown("---")
